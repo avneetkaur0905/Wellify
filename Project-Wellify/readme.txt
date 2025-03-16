@@ -35,11 +35,6 @@
   571  history
 
 
-Prompt for report data generation 
-Please refer attached report, similarly I want a 10 pages reports for each year starting from 2020 to 2025, that shows a variation in blood pressure to high, kidney function low, lipid profileLiver function is normal and thyroid is going bad. patient name must be same, dob must be same, age will very. patient details must be there on first page of each year report. change the patient name but it must be same in all reports, test results must be tabular values in  test report as shown in attached report. do not give the summary
-
-
-
 
 Extracted data 
 BP Diastolic	80	98	90	90	85	✅ Stable
@@ -80,14 +75,4 @@ eGFR	130	115	90	90	65
 4️⃣ HDL Cholesterol – "Good" cholesterol level.
 6️⃣ Triglycerides – Fat levels in blood.
 7️⃣ eGFR – Kidney filtration efficiency.
-
-
-Sir, we have create this system for generating insights from blood reports.
-
-
-
-working files
-index.html
-app.py
-
 
