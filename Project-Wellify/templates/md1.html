@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellify</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/md1.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Wellify</h1>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#health-data">My Health Data</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#scan-prescription">Upload Prescription</a></li>
+                    <li><a href="#" id="openUploadReports">Upload Medical Reports</a></li>
+                    <li><a href="#upload-images">Upload Medicine Images</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#health-reports">My Health Reports</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#illness-history">Illness History</a></li>
+                    <li><a href="#medicine-tracker">Medicine Usage Tracker</a></li>
+                    <li><a href="#doctor-visits">Doctor Visit Records</a></li>
+                    <li><a href="#" id="openHealthTrends">Health Trends & Analysis</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#longevity">Longevity</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#diet">Diet Recommendations</a></li>
+                    <li><a href="#exercise">Exercise & Activity</a></li>
+                    <li><a href="#sleep">Sleep & Lifestyle</a></li>
+                    <li><a href="#medicine-reminders">Medicine Intake Reminders</a></li>
+                    <li><a href="#appointment-alerts">Doctor Appointment Alerts</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#login" class="open-popup-btn" id="openLogin">Log-in</a></li>
+            <li class="nav-item"><a href="#signup" class="open-popup-btn" id="openPopup">Sign Up</a></li>
+            <li class="nav-item"><a href="#book-appointment" class="cta-button">Book Appointment</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Health, Our Priority</h1>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section" id="health-data">
+            <h2>My Health Data</h2>
+            <div class="card-grid">
+                <div class="card"><a href="#scan-prescription">Upload Prescription</a></div>
+                <div class="card"><a href="#upload-reports">Upload Medical Reports</a></div>
+                <div class="card"><a href="#upload-images">Upload Medicine Images</a></div>
+            </div>
+        </section>
+
+        <section class="section" id="health-reports">
+            <h2>My Health Reports</h2>
+            <div class="card-grid">
+                <div class="card"><a href="#illness-history">Illness History</a></div>
+                <div class="card"><a href="#medicine-tracker">Medicine Usage Tracker</a></div>
+                <div class="card"><a href="#doctor-visits">Doctor Visit Records</a></div>
+                <div class="card"><a href="#" id="openHealthTrendsCard">Health Trends & Analysis</a></div>
+            </div>
+        </section>
+
+        <section class="section" id="longevity">
+            <h2>Longevity</h2>
+            <div class="card-grid">
+                <div class="card"><a href="#diet">Diet Recommendations</a></div>
+                <div class="card"><a href="#exercise">Exercise & Activity</a></div>
+                <div class="card"><a href="#sleep">Sleep & Lifestyle</a></div>
+                <div class="card"><a href="#medicine-reminders">Medicine Intake Reminders</a></div>
+                <div class="card"><a href="#appointment-alerts">Doctor Appointment Alerts</a></div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (Optional) -->
+        <section class="section testimonials">
+            <h2>What Our Customer Say</h2>
+            <p>"Wellify transformed my health journey with their easy-to-use tools!" – A valuable customer</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Learn more about our mission to improve health outcomes.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@wellify.com | Phone: (+91) 9518146736</p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Signup Popup Modal -->
+    <div class="popup" id="signupPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">×</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required placeholder="Enter your phone number">
+                <button type="submit" class="cta-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Popup Modal -->
+    <div class="popup" id="loginPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeLogin">×</span>
+            <h2>Log In</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="loginEmail" required placeholder="Enter your email">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+                <a href="#forgot-password" class="forgot-password">Forgot Password?</a>
+
+                <button type="submit" class="cta-button">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!--  this is new popup modal for Upload Prescription -->
+<div class="popup" id="uploadPrescriptionPopup">
+    <div class="popup-content">
+        <span class="close-btn" id="closeUploadPrescription">×</span>
+        <h2>Upload Prescription</h2>
+        <form id="uploadPrescriptionForm">
+            <label for="prescriptionDetails">Prescription Details:</label>
+            <textarea id="prescriptionDetails" name="prescriptionDetails" rows="4" placeholder="Enter prescription details" required></textarea>
+
+            <label for="prescriptionFile">Upload File (Image or PDF):</label>
+            <input type="file" id="prescriptionFile" name="prescriptionFile" accept=".jpg, .jpeg, .png, .pdf" required>
+
+            <button type="submit" class="cta-button" id="uploadButton">Upload</button>
+            <div id="uploadStatus" style="display: none; margin-top: 1rem; color: #4A90E2;">Uploading...</div>
+        </form>
+    </div>
+</div>
+
+<!-- Upload Medical Reports Modal -->
+<div class="popup" id="uploadReportsPopup">
+    <div class="popup-content">
+        <span class="close-btn" id="closeUploadReports">×</span>
+        <h2>Upload Medical Reports</h2>
+        <form id="uploadReportsForm" enctype="multipart/form-data">
+            <!-- Add Report Details textarea -->
+            <label for="reportDetails">Report Details:</label>
+            <textarea id="reportDetails" name="reportDetails" rows="4" placeholder="Enter report details" required></textarea>
+
+            <label for="medicalReports">Upload Reports (PDFs):</label>
+            <input type="file" id="medicalReports" name="medicalReports" accept=".pdf" multiple required>
+            
+            <button type="submit" class="cta-button">Upload</button>
+            <div id="uploadStatus" style="display: none; margin-top: 1rem; color: #4A90E2;">Uploading...</div>
+        </form>
+    </div>
+</div>
+ <!-- Health Trends Popup -->
+ <div class="popup" id="healthTrendsPopup">
+    <div class="popup-content">
+        <span class="close-btn" id="closeHealthTrends">×</span>
+        <h2>Health Data Summary</h2>
+            <div id="trendsTableContainer" style="overflow-x: auto;">
+                <table id="healthTrendsTable">
+                    <thead id="trendsTableHead">
+                        <tr>
+                            <th>Parameter</th>
+                            <!-- Years will be dynamically added -->
+                            <th>Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trendsTableBody"></tbody>
+                </table>
+                <div id="loadingMessage" style="display: none; text-align: center; margin-top: 1rem; color: #4A90E2;">Loading...</div>
+            </div>
+        <button class="cta-button" id="closeTrendsBtn" style="margin-top: 20px;">Close</button>
+    </div>
+</div>
+
+    <!-- [Other popups unchanged] -->
+
+<!-- Scripts -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="{{ url_for('static', filename='js/md1.js') }}"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9213e4702a92b05f',t:'MTc0MjEyNDM1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

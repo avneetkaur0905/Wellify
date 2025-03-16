@@ -1,0 +1,420 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    float: left;
+}
+
+.logo h1 {
+    color: #4A90E2;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    list-style: none;
+    float: right;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: #4A90E2;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    list-style: none;
+    border: 1px solid #4A90E2;
+    border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333333;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+}
+
+.cta-button {
+    background-color: #50C878;
+    color: #FFFFFF;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #58D68D;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, #4A90E2, #FFFFFF);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 60px; /* Space for fixed navbar */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Main Content */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section h2 {
+    color: #4A90E2;
+    margin-bottom: 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border: 2px solid #4A90E2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #50C878;
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #F5F5F5;
+}
+
+/* Footer */
+.footer {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section a {
+    color: #4A90E2;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-item {
+        display: block;
+        margin: 0;
+    }
+
+    .nav-item a {
+        padding: 1rem;
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        float: right;
+    }
+
+    .hero {
+        height: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 2px solid #4A90E2;
+}
+
+.popup-content h2 {
+    color: #4A90E2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #4A90E2;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.popup-content input:focus {
+    outline: none;
+    border-color: #50C878;
+    box-shadow: 0 0 5px rgba(80, 200, 120, 0.3);
+}
+
+.popup-content textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #4A90E2;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.popup-content textarea:focus {
+    outline: none;
+    border-color: #50C878;
+    box-shadow: 0 0 5px rgba(80, 200, 120, 0.3);
+}
+
+.popup-content input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #4A90E2;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.popup-content input[type="file"]:focus {
+    outline: none;
+    border-color: #50C878;
+    box-shadow: 0 0 5px rgba(80, 200, 120, 0.3);
+}
+
+.popup-content .cta-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #50C878;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content .cta-button:hover {
+    background-color: #58D68D;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #333333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #4A90E2;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #4A90E2;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+#uploadStatus {
+    display: none; /* Hidden by default */
+    margin-top: 1rem;
+    color: #4A90E2;
+    font-weight: 500;
+}
+
+/* Increase width for Health Trends Popup */
+#healthTrendsPopup .popup-content {
+    max-width: 600px; /* Adjust this value as needed */
+}
+
+/* Ensure the table fits the new width */
+#healthTrendsPopup #healthTrendsTable {
+    width: 100%; /* Make the table fill the popup width */
+}
+
+#healthTrendsPopup #healthTrendsTable th,
+#healthTrendsPopup #healthTrendsTable td {
+    padding: 10px; /* Add padding for better spacing */
+    text-align: left; /* Align text to the left */
+}
+
+/* Add a scrollbar for smaller screens */
+#trendsTableContainer {
+    overflow-x: auto;
+}
+
+
+/* Add borders to the table */
+#healthTrendsTable {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are merged */
+    margin-top: 1rem; /* Add some spacing above the table */
+}
+
+/* Add borders to table headers and cells */
+#healthTrendsTable th,
+#healthTrendsTable td {
+    border: 1px solid #4A90E2; /* Border color matching your theme */
+    padding: 10px; /* Add padding for better spacing */
+    text-align: left; /* Align text to the left */
+}
+
+/* Style the table header */
+#healthTrendsTable th {
+    background-color: #4A90E2; /* Header background color */
+    color: #FFFFFF; /* Header text color */
+    font-weight: 500; /* Make header text bold */
+}
+
+/* Style alternating rows for better readability */
+#healthTrendsTable tbody tr:nth-child(odd) {
+    background-color: #F5F5F5; /* Light gray for odd rows */
+}
+
+#healthTrendsTable tbody tr:nth-child(even) {
+    background-color: #FFFFFF; /* White for even rows */
+}
+
+/* Hover effect for table rows */
+#healthTrendsTable tbody tr:hover {
+    background-color: #E0F7FA; /* Light blue hover effect */
+}
