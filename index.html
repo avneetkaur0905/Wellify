@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Wellify</h1>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#health-data">My Health Data</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="openUploadPrescription">Upload Prescription</a></li>
+                    <li><a href="#" id="openUploadReports">Upload Medical Reports</a></li>
+                    <li><a href="#" id="openUploadMedicineImages">Upload Medicine Images</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#health-reports">My Health Reports</a>
+                <ul class="dropdown-menu">
+                    
+                    <li><a href="/health-summary">Health Trends & Analysis</a></li>
+                    <li><a href="/medical-summary">Medical Summary</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#longevity">Longevity</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="openDietRecommendations">Diet Recommendations</a></li>
+                    <li><a href="#" id="openExerciseRecommendations">Exercise & Activity</a></li>
+                    <li><a href="#" id="openSleepRecommendations">Sleep & Lifestyle</a></li>
+                    <li><a href="#" id="openMedicineRecommendations">Medicine Intake Reminders</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#login" class="open-popup-btn" id="openLogin">Log-in</a></li>
+            <li class="nav-item"><a href="#signup" class="open-popup-btn" id="openPopup">Sign Up</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Health, Our Priority</h1>
+            <button class="cta-button" id="openGetStarted">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section" id="health-data">
+            <h2>My Health Data</h2>
+            <div class="card-grid">
+                <div class="card"><button class="recommendation-btn" id="openUploadPrescriptionBottom">Upload Prescription</button></div>
+                <div class="card"><button class="recommendation-btn" id="openUploadReportsBottom">Upload Medical Reports</button></div>
+                <div class="card"><button class="recommendation-btn" id="openUploadMedicineImagesBottom">Upload Medicine Images</button></div>
+            </div>
+        </section>
+
+        <section class="section" id="graphs">
+            <div class="graphs-grid">
+                <div class="graph-card">
+                    <canvas id="bloodPressureChart"></canvas>
+                </div>
+                <div class="graph-card">
+                    <canvas id="sugarLevelChart"></canvas>
+                </div>
+                <div class="graph-card">
+                    <canvas id="bloodCountChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="longevity">
+            <h2>Longevity</h2>
+            <div class="card-grid">
+                <div class="card"><button class="recommendation-btn" id="openDietRecommendationsBottom">Diet Recommendations</button></div>
+                <div class="card"><button class="recommendation-btn" id="openExerciseRecommendationsBottom">Exercise & Activity</button></div>
+                <div class="card"><button class="recommendation-btn" id="openSleepRecommendationsBottom">Sleep & Lifestyle</button></div>
+                <div class="card"><button class="recommendation-btn" id="openMedicineRecommendationsBottom">Medicine Intake Reminders</button></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Learn more about our mission to improve health outcomes.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#91e2e4e1e1fee3e5d1e6f4fdfdf8f7e8bff2fefc"><span class="__cf_email__" data-cfemail="8cfff9fcfce3fef8ccfbe9e0e0e5eaf5a2efe3e1">[email protected]</span></a> | Phone: (+91) 9518146736</p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Signup Popup Modal -->
+    <div class="popup" id="signupPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">×</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required placeholder="Enter your phone number">
+                <button type="submit" class="cta-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Popup Modal -->
+    <div class="popup" id="loginPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeLogin">×</span>
+            <h2>Log In</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="loginEmail" required placeholder="Enter your email">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                <a href="#forgot-password" class="forgot-password">Forgot Password?</a>
+                <button type="submit" class="cta-button">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Upload Prescription Popup Modal -->
+    <div class="popup" id="uploadPrescriptionPopupNew">
+        <div class="popup-content">
+            <span class="close-btn" id="closeUploadPrescriptionNew">×</span>
+            <h2>Upload Prescription</h2>
+            <form id="uploadPrescriptionFormNew" action="/upload_prescription" method="POST" enctype="multipart/form-data">
+                <label for="prescriptionDetailsNew">Prescription Details:</label>
+                <textarea id="prescriptionDetailsNew" name="prescriptionDetails" rows="4" placeholder="Enter prescription details" required></textarea>
+                <label for="prescriptionFileNew">Upload File (Image or PDF):</label>
+                <input type="file" id="prescriptionFileNew" name="prescriptionFile" accept=".jpg, .jpeg, .png, .pdf" required>
+                <button type="submit" class="cta-button">Upload</button>
+                <div id="uploadStatusPrescription" style="display: none; margin-top: 1rem; color: #4A90E2;">Uploading...</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Upload Medical Reports Modal -->
+    <div class="popup" id="uploadReportsPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeUploadReports">×</span>
+            <h2>Upload Medical Reports</h2>
+            <form id="uploadReportsForm" action="/upload_reports" method="POST" enctype="multipart/form-data">
+                <label for="reportDetails">Report Details:</label>
+                <textarea id="reportDetails" name="reportDetails" rows="4" placeholder="Enter report details" required></textarea>
+                <label for="medicalReports">Upload Reports (PDFs):</label>
+                <input type="file" id="medicalReports" name="medicalReports" accept=".pdf" multiple required>
+                <button type="submit" class="cta-button">Upload</button>
+                <div id="uploadStatus" style="display: none; margin-top: 1rem; color: #4A90E2;">Uploading...</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Upload Medicine Images Popup Modal -->
+    <div class="popup" id="uploadMedicineImagesPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeUploadMedicineImages">×</span>
+            <h2>Upload Medicine Images</h2>
+            <form id="uploadMedicineImagesForm" action="/upload_medicine_images" method="POST" enctype="multipart/form-data">
+                <label for="medicineDetails">Medicine Details:</label>
+                <textarea id="medicineDetails" name="medicineDetails" rows="4" placeholder="Enter medicine details" required></textarea>
+                <label for="medicineImages">Upload Medicine Images (Images):</label>
+                <input type="file" id="medicineImages" name="medicineImages" accept=".jpg, .jpeg, .png" multiple required>
+                <button type="submit" class="cta-button">Upload</button>
+                <div id="uploadStatusMedicineImages" style="display: none; margin-top: 1rem; color: #4A90E2;">Uploading...</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Diet Recommendations Popup Modal -->
+    <div class="popup" id="dietRecommendationsPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeDietRecommendations">×</span>
+            <h2>Diet Recommendations</h2>
+            <div class="diet-recommendations" id="dietRecommendationsContent">
+                <!-- Diet recommendations will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise Recommendations Popup Modal -->
+    <div class="popup" id="exerciseRecommendationsPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeExerciseRecommendations">×</span>
+            <h2>Exercise Recommendations</h2>
+            <div class="diet-recommendations" id="exerciseRecommendationsContent">
+                <!-- Exercise recommendations will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sleep Recommendations Popup Modal -->
+    <div class="popup" id="sleepRecommendationsPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeSleepRecommendations">×</span>
+            <h2>Sleep Recommendations</h2>
+            <div class="diet-recommendations" id="sleepRecommendationsContent">
+                <!-- Sleep recommendations will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Medicine Intake Reminders Popup Modal -->
+    <div class="popup" id="medicineRecommendationsPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeMedicineRecommendations">×</span>
+            <h2>Medicine Intake Reminders</h2>
+            <div class="diet-recommendations" id="medicineRecommendationsContent">
+                <!-- Medicine intake reminders will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="static/scripts.js"></script>
+</body>
+</html>

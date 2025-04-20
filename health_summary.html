@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Summary - Wellify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Wellify</h1>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="/">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#health-data">My Health Data</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="openUploadPrescription">Upload Prescription</a></li>
+                    <li><a href="#" id="openUploadReports">Upload Medical Reports</a></li>
+                    <li><a href="#" id="openUploadMedicineImages">Upload Medicine Images</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#health-reports">My Health Reports</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/health-summary">Health Trends & Analysis</a></li>
+                    <li><a href="/medical-summary">Medical Summary</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#longevity">Longevity</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="openDietRecommendations">Diet Recommendations</a></li>
+                    <li><a href="#" id="openExerciseRecommendations">Exercise & Activity</a></li>
+                    <li><a href="#" id="openSleepRecommendations">Sleep & Lifestyle</a></li>
+                    <li><a href="#" id="openMedicineRecommendations">Medicine Intake Reminders</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#login" class="open-popup-btn" id="openLogin">Log-in</a></li>
+            <li class="nav-item"><a href="#signup" class="open-popup-btn" id="openPopup">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h2>Health Trends & Analysis</h2>
+            <div class="file-list">
+                {% for file in files %}
+                    <div class="file-item">
+                        <div class="file-details">
+                            <div class="file-info">
+                                <h3>{{ file.name }}</h3>
+                                <p>Size: {{ file.size }} | Uploaded: {{ file.date }} | Type: {{ file.type }}</p>
+                            </div>
+                            <div class="file-actions">
+                                <button class="analyze-btn" data-action="analyze" data-filename="{{ file.name }}">Analyze Report</button>
+                                <button class="analyze-btn" data-action="summarize" data-filename="{{ file.name }}">Summarize</button>
+                                <button class="analyze-btn" data-action="view" data-filename="{{ file.name }}">View</button>
+                            </div>
+                        </div>
+                        <div class="file-output-container">
+                            <textarea class="analysis-textarea" readonly style="display: none;"></textarea>
+                            <textarea class="summary-textarea" readonly style="display: none;"></textarea>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Learn more about our mission to improve health outcomes.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#91e2e4e1e1fee3e5d1e6f4fdfdf8f7e8bff2fefc"><span class="__cf_email__" data-cfemail="8cfff9fcfce3fef8ccfbe9e0e0e5eaf5a2efe3e1">[email protected]</span></a> | Phone: (+91) 9518146736</p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include scripts.js for popup functionality -->
+    <script src="/static/health_summary.js"></script>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
